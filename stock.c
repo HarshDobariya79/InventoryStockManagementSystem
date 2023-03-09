@@ -2,8 +2,8 @@
 #include <string.h> 
 #include <stdlib.h>
 
-#define true 0 //true boolean
-#define false 1 // for  false the boolean
+#define false 0 //false boolean
+#define true 1 // for  true the boolean
 
 struct product
 {
@@ -183,7 +183,7 @@ void purchaseprod()
 { // function for purchasing a product
     int quant, i;
     char id[10];
-    int z = false;
+    int z = true;
     count = readFile();
     printf("Sell an Item ");
     printf("\nProduct ID: ");
@@ -193,7 +193,7 @@ void purchaseprod()
     {
         if (strcmp(id, prod[i].id) == 0) // if the id that the user want to find and the data id that has been saved at file is matched.
         {
-            z = true;
+            z = false;
             printf("\nItem found! Containing: \n"); //...then display the match
             printf("\nProduct name: %s", prod[i].name);
             printf("\nPrice: %.2lfphp\n\n", prod[i].price);
@@ -214,7 +214,7 @@ void purchaseprod()
             prod[i].sales += tempSales;
         }
     }
-    if (z == false)
+    if (z == true)
     { // if the product id is not available.
 
         printf("Cant find the product id: %s.", id);
@@ -226,14 +226,14 @@ void deleteprod()
     count = readFile();
     char id[10];
     int i, j;
-    int z = false;
+    int z = true;
     printf("Enter the id that you want to be delete : "); // user's input for deleting.
     fflush(stdin);
     gets(id);
 
     for (i = 0; i < count; i++)
     { // loop to finding the user's input
-        z = true;
+        z = false;
         if (strcmp(prod[i].id, id) == 0)
         {                                     // if the user's input matched the data
             for (j = i; j < (count - 1); j++) // it will erase the selected data.
@@ -243,7 +243,7 @@ void deleteprod()
             count--;
         }
     }
-    if (z == false)
+    if (z == true)
     { // will be executed if the product id is not available.
         printf("Cant find product id: %s .", id);
     }
