@@ -1,4 +1,4 @@
-### Sem-1 Individual Project for inverntory stock management 
+### Sem-1 Individual Project for inventory stock management 
 
 # Inventory Stock Management Program
 This program manages the stock of a store. It is written in C and uses a file to store data about the products..
